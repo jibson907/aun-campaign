@@ -1,0 +1,34 @@
+{
+  "name": "aun-israel-dike-campaign",
+  "private": true,
+  "version": "1.0.0",
+  "homepage": "https://jibson907.github.io/aun-campaign/",
+  "type": "module",
+  "description": "AUN Port Harcourt billboard campaign landing page featuring Israel Curtis Dike",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "framer-motion": "^11.3.19",
+    "gh-pages": "^6.3.0",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.52.1",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "vite": "^5.3.5"
+  }
+}
