@@ -29,7 +29,7 @@ export default function Innovation() {
           <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
             {HIGHLIGHTS.map((h) => (
               <li key={h} className="flex items-center gap-2 text-sm font-semibold text-aun-900 sm:text-base">
-                <HiCheck className="text-gold-500" size={22} />
+                <HiCheck className="text-success-500" size={22} />
                 {h}
               </li>
             ))}

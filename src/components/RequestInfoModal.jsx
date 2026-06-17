@@ -114,10 +114,6 @@ function ModalShell({ source, onClose }) {
         <div className="grid lg:grid-cols-[1fr_1.15fr]">
           {/* Brand strip */}
           <aside className="relative hidden overflow-hidden bg-aun-700 p-8 text-white lg:flex lg:flex-col lg:justify-between">
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(244,180,0,0.35),_transparent_55%)]"
-            />
             <div className="relative">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-gold-200">
                 Admissions
@@ -348,7 +344,7 @@ function RequestInfoForm({ firstFieldRef, source, onSuccess }) {
         </select>
       </Field>
 
-      <Field label="Expected Graduation Year" error={errors.graduationYear?.message}>
+      {/*<Field label="Expected Graduation Year" error={errors.graduationYear?.message}>
         <select
           defaultValue=""
           className="form-input"
@@ -363,7 +359,7 @@ function RequestInfoForm({ firstFieldRef, source, onSuccess }) {
             </option>
           ))}
         </select>
-      </Field>
+      </Field>*/}
 
       <button
         type="submit"

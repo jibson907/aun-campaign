@@ -53,7 +53,7 @@ export default function Campus() {
                   <span className="absolute inset-0 bg-aun-900/15" />
                   <span className="absolute left-4 top-4 right-4 text-left">
                     <span className="block font-display text-lg font-bold leading-tight text-white sm:text-xl">
-                      2026 AUN Undergraduate Programs
+                      Take a Virtual tour of the AUN campus
                     </span>
                     <span className="mt-1 block text-xs text-white/80 sm:text-sm">
                       American University of Nigeria

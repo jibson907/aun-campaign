@@ -7,10 +7,10 @@ import { trackEvent } from '../lib/analytics.js';
 import { useRequestInfoModal } from '../lib/modal.jsx';
 
 const HERO_SLIDES = [
-  asset('AUN_Students.png'),
   asset('aun.jpg'),
-  asset('aun2.jpg'),
-  asset('rfdf_large.jpg'),
+  asset('aun4.jpg'),
+  asset('aun5.jpg'),
+  asset('aun6.jpg'),
 ];
 const SLIDE_INTERVAL_MS = 5000;
 
@@ -44,14 +44,8 @@ export default function Hero({ variant = 'A' }) {
   return (
     <section
       id="top"
-      className="relative isolate flex items-center overflow-hidden bg-surface pt-20 pb-6 sm:pt-24 sm:pb-8 lg:pt-24 lg:pb-10"
+      className="relative isolate flex items-center overflow-hidden bg-[#F3F4F6] pt-20 pb-6 sm:pt-24 sm:pb-8 lg:pt-24 lg:pb-10"
     >
-      {/* Soft brand backdrop */}
-      <div aria-hidden className="absolute inset-0 -z-10 bg-hero-radial" />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-b from-aun-50 to-transparent"
-      />
       {/* World map watermark */}
       <WorldWatermark className="absolute -right-32 top-24 -z-10 hidden h-[520px] w-[820px] text-aun-200/70 lg:block" />
 
@@ -104,7 +98,7 @@ export default function Hero({ variant = 'A' }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('cta_click', { location: 'hero', cta: 'Explore Programs' })}
-                className="btn-outline"
+                className="btn-primary"
               >
                 Explore Programs
               </a>
@@ -143,11 +137,7 @@ export default function Hero({ variant = 'A' }) {
             transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
             className="relative mx-auto w-full max-w-xl"
           >
-            <div
-              aria-hidden
-              className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold-200/70 via-aun-100 to-transparent blur-2xl"
-            />
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-aun-100 shadow-elevated ring-1 ring-aun-100">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-[#F3F4F6] shadow-elevated ring-1 ring-black/5">
               <AnimatePresence mode="sync" initial={false}>
                 <motion.img
                   key={HERO_SLIDES[slide]}
@@ -235,9 +225,9 @@ function FloatingStat({ icon: Icon, value, suffix, label }) {
         hidden: { opacity: 0, y: 16, scale: 0.92 },
         show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: 'easeOut' } },
       }}
-      className="pointer-events-auto flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-soft ring-1 ring-aun-100"
+      className="pointer-events-auto flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-soft ring-1 ring-black/5"
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-100 text-aun-700">
+      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F3F4F6] text-aun-700">
         <Icon size={20} />
       </span>
       <div className="leading-tight">

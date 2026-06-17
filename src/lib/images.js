@@ -11,6 +11,8 @@ const LOCAL = {
   aun: asset('aun.jpg'),
   aun2: asset('aun2.jpg'),
   aun3: asset('aun3.jpg'),
+  aun5: asset('aun5.jpg'),
+  aun6: asset('aun6.jpg'),
   graduate: asset('graduate.jpg'),
   pledge: asset('pleage.jpg'),
   isreal: asset('isreal.jpg'),
@@ -62,7 +64,7 @@ export const IMAGES = {
 };
 
 export const YOUTUBE = {
-  storyVideoId: 'jMmgKhYaL0w',
+  storyVideoId: 'nOdPB2YYANU',
   storyTitle:
     'American University of Nigeria \u2014 Campus Life & Student Experience',
 };

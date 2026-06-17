@@ -7,16 +7,8 @@ import { buildCampaignUrl } from '../lib/utils.js';
 import { trackEvent } from '../lib/analytics.js';
 import { useRequestInfoModal } from '../lib/modal.jsx';
 
-const PARTNER_PINS = [
-  { cx: 200, cy: 150, label: 'San Francisco' },
-  { cx: 280, cy: 140, label: 'New York' },
-  { cx: 420, cy: 145, label: 'London' },
-  { cx: 480, cy: 195, label: 'Lagos' },
-  { cx: 495, cy: 215, label: 'Yola' },
-  { cx: 580, cy: 175, label: 'Dubai' },
-  { cx: 700, cy: 200, label: 'Singapore' },
-  { cx: 760, cy: 250, label: 'Sydney' },
-];
+const PARTNER_PINS = []; // legacy data — retained only to avoid breaking imports if re-introduced
+void PARTNER_PINS;
 
 const GLOBAL_STATS = [
   { icon: HiOutlineGlobeAlt, value: 50, suffix: '+', label: 'Countries' },
@@ -146,80 +138,6 @@ function YolaMap() {
   );
 }
 
-function WorldMap() {
-  return (
-    <svg
-      viewBox="0 0 900 480"
-      className="block h-auto w-full text-aun-300"
-      role="img"
-      aria-label="World map with AUN partner locations"
-    >
-      <defs>
-        <pattern id="cta-dotgrid" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.4" fill="currentColor" />
-        </pattern>
-        <mask id="cta-continents">
-          <rect width="900" height="480" fill="black" />
-          <g fill="white">
-            <path d="M120 90 Q 180 60 260 100 L 300 180 Q 250 230 180 220 Q 140 200 120 160 Z" />
-            <path d="M260 250 Q 300 240 320 300 L 300 400 Q 270 430 250 380 Z" />
-            <path d="M400 110 Q 450 95 500 120 L 510 175 Q 470 185 420 170 Z" />
-            <path d="M460 195 Q 520 180 555 220 L 540 340 Q 500 380 470 340 Q 445 270 460 195 Z" />
-            <path d="M555 175 Q 600 165 640 190 L 645 240 Q 605 250 570 235 Z" />
-            <path d="M640 130 Q 720 110 800 150 L 810 250 Q 740 270 670 240 Q 640 200 640 130 Z" />
-            <path d="M720 290 Q 770 280 800 310 L 790 350 Q 750 360 720 340 Z" />
-          </g>
-        </mask>
-      </defs>
-      <rect width="900" height="480" fill="url(#cta-dotgrid)" mask="url(#cta-continents)" />
-
-      <g stroke="#f4b400" strokeWidth="1.2" fill="none" opacity="0.7">
-        {PARTNER_PINS.filter((p) => p.label !== 'Yola').map((p, i) => (
-          <motion.path
-            key={p.label}
-            d={`M495 215 Q ${(495 + p.cx) / 2} ${Math.min(p.cy, 215) - 60} ${p.cx} ${p.cy}`}
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 0.7 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1.1, delay: 0.2 + i * 0.08 }}
-            strokeDasharray="4 4"
-          />
-        ))}
-      </g>
-
-      {PARTNER_PINS.map((p, i) => (
-        <g key={p.label}>
-          <motion.circle
-            cx={p.cx}
-            cy={p.cy}
-            r={p.label === 'Yola' ? 9 : 5}
-            fill={p.label === 'Yola' ? '#f4b400' : '#003366'}
-            stroke="white"
-            strokeWidth="2"
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
-          />
-          {p.label === 'Yola' && (
-            <motion.circle
-              cx={p.cx}
-              cy={p.cy}
-              r="14"
-              fill="none"
-              stroke="#f4b400"
-              strokeWidth="2"
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 2, opacity: 0 }}
-              transition={{ duration: 2.4, repeat: Infinity, ease: 'easeOut' }}
-            />
-          )}
-        </g>
-      ))}
-    </svg>
-  );
-}
-
 function QrCard({ url }) {
   return (
     <motion.div
@@ -295,13 +213,9 @@ function FinalCard({ onRequest }) {
       transition={{ duration: 0.6, delay: 0.2 }}
       className="relative overflow-hidden rounded-3xl bg-aun-700 p-6 text-white shadow-elevated sm:p-8"
     >
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(244,180,0,0.35),_transparent_55%)]"
-      />
       <div className="relative flex h-full flex-col">
         <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-gold-200">
-          Enrolling Now
+          Enroll Now
         </span>
         <h3 className="mt-5 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
           Your future starts at <span className="text-gold-300">AUN</span>
@@ -327,7 +241,7 @@ function FinalCard({ onRequest }) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent('cta_click', { location: 'final_cta', cta: 'Explore Programs' })}
-            className="btn w-full border-2 border-white/40 bg-white/5 text-white hover:bg-white hover:text-aun-700"
+            className="btn-primary w-full"
           >
             Explore Programs
           </a>

@@ -3,7 +3,7 @@
 
 export function AUNLogo({ className = 'h-10 w-auto', tone = 'auto' }) {
   // tone="auto" picks colors based on currentColor; pass tone="light" to render on dark bg.
-  const wordmarkFill = tone === 'light' ? '#ffffff' : '#003366';
+  const wordmarkFill = tone === 'light' ? '#FFFFFF' : '#1A365D';
   return (
     <svg
       viewBox="0 0 240 64"
@@ -13,13 +13,13 @@ export function AUNLogo({ className = 'h-10 w-auto', tone = 'auto' }) {
     >
       <defs>
         <linearGradient id="aun-shield" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stopColor="#0b4286" />
-          <stop offset="100%" stopColor="#003366" />
+          <stop offset="0%" stopColor="#1A365D" />
+          <stop offset="100%" stopColor="#1A365D" />
         </linearGradient>
       </defs>
       <g>
         <rect x="0" y="6" width="54" height="54" rx="12" fill="url(#aun-shield)" />
-        <rect x="0" y="6" width="54" height="10" fill="#f4b400" rx="12" />
+        <rect x="0" y="6" width="54" height="10" fill="#C53030" rx="12" />
         <text
           x="27"
           y="44"
@@ -60,7 +60,7 @@ export function AUNLogo({ className = 'h-10 w-auto', tone = 'auto' }) {
 }
 
 export function ChohkmanLogo({ className = 'h-10 w-auto', tone = 'auto' }) {
-  const wordmarkFill = tone === 'light' ? '#ffffff' : '#003366';
+  const wordmarkFill = tone === 'light' ? '#FFFFFF' : '#1A365D';
   return (
     <svg
       viewBox="0 0 240 64"
@@ -70,8 +70,8 @@ export function ChohkmanLogo({ className = 'h-10 w-auto', tone = 'auto' }) {
     >
       <defs>
         <linearGradient id="chk-disc" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stopColor="#facc46" />
-          <stop offset="100%" stopColor="#d59a02" />
+          <stop offset="0%" stopColor="#C53030" />
+          <stop offset="100%" stopColor="#9E2626" />
         </linearGradient>
       </defs>
       <g>
@@ -83,7 +83,7 @@ export function ChohkmanLogo({ className = 'h-10 w-auto', tone = 'auto' }) {
           fontFamily="Georgia, serif"
           fontWeight="800"
           fontSize="22"
-          fill="#003366"
+          fill="#FFFFFF"
         >
           C
         </text>

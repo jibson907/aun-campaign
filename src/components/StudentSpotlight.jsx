@@ -32,13 +32,8 @@ export default function StudentSpotlight() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div
-              aria-hidden
-              className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold-200/80 via-aun-100 to-transparent blur-2xl"
-            />
-
             {/* Hero portrait */}
-            <div className="relative overflow-hidden rounded-3xl bg-aun-100 shadow-elevated ring-1 ring-aun-100">
+            <div className="relative overflow-hidden rounded-3xl bg-[#F3F4F6] shadow-elevated ring-1 ring-black/5">
               <img
                 src={IMAGES.storyPortrait}
                 alt={`${STUDENT.name}, ${STUDENT.title}`}
